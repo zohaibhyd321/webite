@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colars",
+  "info": {
+    "singularName": "colar",
+    "pluralName": "colars",
+    "displayName": "colar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "colar": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "colars"
+    }
+  }
+}
